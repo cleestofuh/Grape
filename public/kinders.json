@@ -4,29 +4,29 @@
     {
       "datamodal": "ykModal0",
       "btn-id": "0",
-      "act": "ATE SALAD",
-      "description": "I ATE SALAD INSTEAD OF MCDONALS. IM HEALTHY.",
+      "act": "Ate Salad",
+      "description": "I ate salad instead of McDonalds. I'm Healthy.",
       "rating": "4"
     },
     {
       "datamodal": "ykModal1",
       "btn-id": "1",
-      "act": "WENT TO THE GYM",
+      "act": "Went to the gym.",
       "description": "WENT TO THE GYM AT 9AM THIS MORNING. FEELS GREAT!!",
       "rating": "5"
     },
     {
       "datamodal": "ykModal2",
       "btn-id": "2",
-      "act": "FINISHED MY HOMEWORK EARLY",
-      "description": "I FINISHED MY HOMEWORK TWO DAYS BEFORE IT WAS DUE. I HAVE SO MUCH FREE TIME NOW.",
+      "act": "Finished my homework early",
+      "description": "I finished my homework two days before it was due. I have so much free time now.",
       "rating": "3"
     },
     {
       "datamodal": "ykModal3",
       "btn-id": "3",
-      "act": "I TOOK THE DAY TO RELAX",
-      "description": "LAST WEEK WAS SO STRESSFUL. TAKING THE DAY OFF FEELS SO GOOD.",
+      "act": "I took the day to relax.",
+      "description": "Last week was s ostressful. Taking the day off feels so good.",
       "rating": "2"
     }
   ],
@@ -35,28 +35,28 @@
     {
       "datamodal": "okModal0",
       "btn-id": "0",
-      "act": "BOUGHT FOOD FOR SOMEONE",
+      "act": "Bought food for someone",
       "description": "I bought food for Eunice. I'm happy now.",
       "rating": "4"
     },
     {
       "datamodal": "okModal1",
       "btn-id": "1",
-      "act": "WALKED SOMEONE TO CLASS",
+      "act": "Walked my friend to class",
       "description": "I made Eunice go to class. I'm happy now.",
       "rating": "5"
     },
     {
       "datamodal": "okModal2",
       "btn-id": "2",
-      "act": "HELPED AN OLD LADY CROSS THE STREET",
+      "act": "Helped an old lady cross the street",
       "description": "I walked an old lady named Eunice. I'm happy now.",
       "rating": "1"
     },
     {
       "datamodal": "okModal3",
       "btn-id": "3",
-      "act": "SAY GOODLUCK TO MY FRIEND BEFORE MIDTERM",
+      "act": "Said goodluck to my friend before her midterm.",
       "description": "Hopefully Eunice will get an A so she will be successful",
       "rating": "1"
     }
