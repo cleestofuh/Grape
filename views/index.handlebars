@@ -57,7 +57,7 @@
       <div class="row">
         <div class="col-sm-6">
 					<div class="text-center">
-          	<button id="loveYourself" class="btn btn-lg animated slideInLeft" type="button" data-toggle="modal" data-target="#yourModal">Create a New Deed</button>
+          	<button id="loveYourself" class="btn btn-lg animated slideInLeft" type="button" data-toggle="modal" data-target="#otherModal">Create a New Deed</button>
 					</div>
 				</div>
         <div class="col-sm-6">
@@ -79,26 +79,25 @@
 			</div>
 
 
-						<!-- Modal -->
+						<!-- Modal
 			<div class="modal fade" id="yourModal" role="dialog">
 				<div class="modal-dialog">
 
-					<!-- Modal content-->
+					<!-- Modal content
 					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 							<h4 class="modal-title">add grape</h4>
 						</div>
 						<div class="modal-body">
-							<div class="form-group">
-								<label for="YouOrOthers">Is this good deed for yourself or others?</label>
-								<div class="radio-btns">
-									<input type="radio" value="Yourself" name="check" id="radio1"/>Yourself
-									<input type="radio" value="Others" name="check">Others
-								</div>
-							</div>
-
 							<form id="yourself-form" role="form" method="get" action="/data">
+								<div class="form-group">
+									<label for="YouOrOthers">Is this good deed for yourself or others?</label>
+									<div class="radio-btns">
+										<input type="radio" value="Yourself" name="check" id="radio1"/>Yourself
+										<input type="radio" value="Others" name="check">Others
+									</div>
+								</div>
 							  <div class="form-group">
 							    <label for="whatyoudo">what did you do?</label>
 							    <input type="text" class="form-control" id="whatyoudo" name="whatyoudo" placeholder="Ex. Ate salad">
@@ -118,14 +117,14 @@
 								}
 								</script>
 								<span id="range">0</span>
-								
+
 							</div>
 								<input type="submit" class="btn btn-lg" value="Submit"/>
 							</form>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>-->
 						<!-- Modal -->
 			<div class="modal fade" id="otherModal" role="dialog">
 				<div class="modal-dialog">
@@ -138,6 +137,13 @@
 						</div>
 						<div class="modal-body">
 							<form id="other-form" role="form" method="get" action="/data">
+								<div class="form-group">
+									<label for="YouOrOthers">Is this good deed for yourself or others?</label>
+									<div class="radio-btns">
+										<label class="radio-inline"><input type="radio" name="optradio">Yourself</label>
+										<label class="radio-inline"><input type="radio" name="optradio">Others</label>
+									</div>
+								</div>
 							  <div class="form-group">
 							    <label for="exampleInputEmail1">what did you do?</label>
 							    <input type="text" class="form-control" id="whatyoudoO" name="whatyoudoO" placeholder="Ex. Paid for Bobby's lunch.">
@@ -147,15 +153,12 @@
 							    <textarea class="form-control" id="howyoufeelO" name="howyoufeelO" rows="3" placeholder="Ex. I paid for Bobby's pizza today while he went to the bathroom. The smile on his face said it all."></textarea>
 							  </div>
 							  <div class="form-group">
-							  	<label for="exampleTextarea">how Grape did you feel?</label>
+							  	<label for="exampleTextarea">how grape did you feel?</label>
 							  	<input type="range" name="ratingO" min="0" max="10" value="0" steps="1" onchange="showValueOther(this.value)"/>
-							  	<span id="rangeo">0</span>
-								<script type="text/javascript">
-								function showValueOther(newValue)
-								{
-									document.getElementById("rangeo").innerHTML=newValue;
-								}
-								</script>
+							  	<span>0</span><span style="float:right;">10</span>
+									<div class="row">
+										<p style="color:black;font-size:12pt;">You feel <span id="rangeo">0</span> grape on a scale of 10.</p>
+									</div>
 								</div>
 								<input type="submit" class="btn btn-lg" value="Submit"/>
 							</form>
