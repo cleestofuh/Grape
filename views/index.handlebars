@@ -109,14 +109,16 @@
 							  </div>
 							  <div class="form-group">
 							  	<label for="howkinderyoufeel">how Grape did you feel?</label>
-							  	<input id="howkinderyoufeel" name="rating" type="range"  min="0" max="5" value="0" steps="1" onchange="showValue(this.value)"/>
-							  	<span id="range">0</span>
+							  	<input id="howkinderyoufeel" name="rating" type="range"  min="0" max="10" value="0" steps="1" onchange="showValue(this.value)"/>
+							  	<span id="zero">0</span><span>10</span>
 								<script type="text/javascript">
 								function showValue(newValue)
 								{
 									document.getElementById("range").innerHTML=newValue;
 								}
 								</script>
+								<span id="range">0</span>
+								
 							</div>
 								<input type="submit" class="btn btn-lg" value="Submit"/>
 							</form>
