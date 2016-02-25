@@ -47,6 +47,11 @@ p {
   font-size: 28pt;
 }
 
+.logoimg {
+  width: 90%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 .btn {
   margin: 20px;
   background-color: #BFA6CC;
