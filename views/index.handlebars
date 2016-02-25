@@ -57,19 +57,19 @@
       <div class="row">
         <div class="col-sm-6">
 					<div class="text-center">
-          	<button id="loveYourself" class="btn btn-lg animated slideInLeft" type="button" data-toggle="modal" data-target="#yourModal">love yourself</button>
+          	<button id="loveYourself" class="btn btn-lg animated slideInLeft" type="button" data-toggle="modal" data-target="#yourModal">Create a New Deed</button>
 					</div>
 				</div>
         <div class="col-sm-6">
 					<div class="text-center">
-          	<button id="loveOthers" class="btn btn-lg animated slideInRight" type="button" data-toggle="modal" data-target="#otherModal">love others</button>
+          	<button id="loveOthers" class="btn btn-lg animated slideInRight" type="button" data-toggle="modal" data-target="#otherModal">View Deeds</button>
 					</div>
 				</div>
       </div>
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="text-center">
-						<a href="data" class="btn btn-lg animated slideInUp" type="button">grapes</a>
+						<a href="data" class="btn btn-lg animated slideInUp" type="button">Challenges</a>
 					</div>
 				</div>
 			</div>
@@ -90,6 +90,14 @@
 							<h4 class="modal-title">add grape</h4>
 						</div>
 						<div class="modal-body">
+							<div class="form-group">
+								<label for="YouOrOthers">Is this good deed for yourself or others?</label>
+								<div class="radio-btns">
+									<input type="radio" value="Yourself" name="check" id="radio1"/>Yourself   
+									<input type="radio" value="Others" name="check">Others
+								</div>
+							</div>
+
 							<form id="yourself-form" role="form" method="get" action="/data">
 							  <div class="form-group">
 							    <label for="whatyoudo">what did you do?</label>
