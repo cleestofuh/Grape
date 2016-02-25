@@ -27,6 +27,7 @@ exports.giveData = function(req, res){
         "rating": req.query.ratingO
     };
 
+
   if(req.query.yourradio == 'on') {
     kindersjson["yourkinders"].unshift(newKinderOther);
     i++;
@@ -36,7 +37,7 @@ exports.giveData = function(req, res){
     kindersjson["otherkinders"].unshift(newKinderOther);
     j++;
   }
-  console.log(kindersjson["otherkinders"][i-2]);
+
 	res.render('data', {yourkinderact:kindersjson["yourkinders"], otherkinderact:kindersjson["otherkinders"]});
 };
 
