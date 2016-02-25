@@ -2,6 +2,7 @@
 {
   "yourkinders" :[
     {
+      "type": "yours",
       "datamodal": "ykModal0",
       "btn-id": "0",
       "act": "Ate Salad",
@@ -9,6 +10,7 @@
       "rating": "4"
     },
     {
+      "type": "yours",
       "datamodal": "ykModal1",
       "btn-id": "1",
       "act": "Went to the gym.",
@@ -16,6 +18,7 @@
       "rating": "5"
     },
     {
+      "type": "yours",
       "datamodal": "ykModal2",
       "btn-id": "2",
       "act": "Finished my homework early",
@@ -23,6 +26,7 @@
       "rating": "3"
     },
     {
+      "type": "yours",
       "datamodal": "ykModal3",
       "btn-id": "3",
       "act": "I took the day to relax.",
@@ -33,6 +37,7 @@
 
   "otherkinders" :[
     {
+      "type": "other",
       "datamodal": "okModal0",
       "btn-id": "0",
       "act": "Bought food for someone",
@@ -40,6 +45,7 @@
       "rating": "4"
     },
     {
+      "type": "other",
       "datamodal": "okModal1",
       "btn-id": "1",
       "act": "Walked my friend to class",
@@ -47,6 +53,7 @@
       "rating": "5"
     },
     {
+      "type": "other",
       "datamodal": "okModal2",
       "btn-id": "2",
       "act": "Helped an old lady cross the street",
@@ -54,6 +61,7 @@
       "rating": "1"
     },
     {
+      "type": "other",
       "datamodal": "okModal3",
       "btn-id": "3",
       "act": "Said goodluck to my friend before her midterm.",
