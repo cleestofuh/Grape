@@ -1,0 +1,295 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #BFA6CC;
+}
+p {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 16pt;
+    color: white;
+    text-align: center;
+}
+.navbar {
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+}
+.navbar-default .navbar-nav > .active{
+  background: rgba(255, 255, 255, 0);
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background: rgba(255, 255, 255, 0);
+}
+.nav.navbar-nav li a {
+  color: white;
+  font-size: 20pt;
+}
+
+.navbar.center {
+    text-align: center;
+}
+
+.navbar.center .nav {
+    display:inline-block;
+    float: none;
+}
+.navbar-brand {
+  color: white !important;
+}
+.nav-head {
+  font-size: 28pt;
+}
+
+.btn {
+  margin: 20px;
+  background-color: #BFA6CC;
+  border: 2px solid #fff;
+  color: #fff;
+  width: 200px;
+}
+.btnTab {
+  margin: 0;
+  width:33%;
+  height: 40px;
+  text-align: center;
+  font-size: 10pt;
+}
+
+.btnTab1{
+  margin: 0;
+  width:50%;
+  height: 40px;
+  text-align: center;
+  font-size: 10pt;
+}
+
+.btnRecent {
+  margin: 5px;
+  background-color: #BFA6CC;
+  border: 2px solid #fff;
+  color: #fff;
+  width: 250px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+}
+
+.btnRecent:hover{
+  background-color: white;
+  color: #BFA6CC !important;
+  border: 2px solid #BFA6CC;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #BFA6CC !important;
+  border: 2px solid #BFA6CC;
+}
+
+.vertical-align {
+  margin-top: 10%;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; /* Adjusts for spacing */
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+/* INDEX */
+
+#ex1Slider .slider-selection {
+  background: #BABABA;
+}
+
+.hometitle {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+  font-size: 200pt;
+  margin-top: -20px;
+}
+#loveYourself {
+  float: right;
+}
+#loveOthers {
+  float: left;
+}
+
+.homep {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-top: -5px;
+  margin: 5px;
+}
+@media (max-width: 767px) {
+    .hometitle {
+      font-size: 100pt;
+    }
+    #loveYourself {
+      float: none;
+    }
+    #loveOthers {
+      float: none;
+    }
+}
+
+/* HELP */
+
+#fixedbutton{
+  position:fixed;
+  bottom:0px;
+  right:0px;
+}
+.glyphicon {
+  color: #fff;
+  font-size: 30px;
+  padding: 20px;
+  float: right;
+}
+.clickable {
+    cursor: pointer;
+}
+/* KINDERS */
+
+#recentData ul li {
+    padding-bottom:5px;
+}
+
+#recentData ul{
+    display: inline;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.recentDataTitle{
+  font-size: 40pt;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+#recentData{
+  font-size: 18pt;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-top: -5px;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+.chart {
+  min-width: 310px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+#week {
+  -webkit-animation-delay: 0.0s;
+}
+#month {
+  -webkit-animation-delay: 0.5s;
+}
+#year {
+  -webkit-animation-delay: 1s;
+}
+.inline{
+  display: inline;
+}
+
+/* STREAKS */
+.homestreak {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 20pt;
+}
+
+.num {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 50pt;
+}
+
+.boxed{
+  border: 1px solid white;
+  margin-bottom: 35px;
+}
+
+#streak1 {
+  -webkit-animation-delay: 0.3s;
+}
+#streak2 {
+  -webkit-animation-delay: 0.2s;
+}
+#streak3 {
+  -webkit-animation-delay: 0.1s;
+}
+
+.friends {
+  list-style-type: none;
+  font-family:'Open Sans Condensed', sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 20pt;
+}
+
+.fr {
+  display: none;
+}
+
+.friendsInfo{
+  list-style-type: none;
+  font-family:'Open Sans Condensed', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+h3{
+  font-size: 15pt;
+}
+
+#friend1, #friend2, #friend3, #friend4{
+
+  color: #fff;
+  font-size: 20pt;
+}
+
+/* CHALLENGE */
+#challenges {
+  height: 600px;
+}
+#challengetext {
+  font-size:100pt;
+  font-weight:600;
+  color:white;
+}
+@media (max-width: 767px) {
+  #challenges {
+    height: 150px;
+  }
+  #challengetext {
+    font-size: 30pt;
+    text-align: left;
+    margin: 10px;
+  }
+
+}

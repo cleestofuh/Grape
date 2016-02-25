@@ -1,0 +1,26 @@
+[
+    {
+      "datamodal": "ykModal0",
+      "act": "ATE SALAD",
+      "description": "I ATE SALAD INSTEAD OF MCDONALS. IM HEALTHY.",
+      "rating": "4"
+    },
+    {
+      "datamodal": "ykModal1",
+      "act": "WENT TO THE GYM",
+      "description": "WENT TO THE GYM AT 9AM THIS MORNING. FEELS GREAT!!",
+      "rating": "5"
+    },
+    {
+      "datamodal": "ykModal2",
+      "act": "FINISHED MY HOMEWORK EARLYT",
+      "description": "I FINISHED MY HOMEWORK TWO DAYS BEFORE IT WAS DUE. I HAVE SO MUCH FREE TIME NOW.",
+      "rating": "3"
+    },
+    {
+      "datamodal": "ykModal3",
+      "act": "I TOOK THE DAY TO RELAX",
+      "description": "LAST WEEK WAS SO STRESSFUL. TAKING THE DAY OFF FEELS SO GOOD.",
+      "rating": "2"
+    }
+  ]
