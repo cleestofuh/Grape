@@ -130,6 +130,11 @@ p {
   float: left;
 }
 
+.radio-btns{
+  text-align: center
+}
+
+
 .homep {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #fff;
