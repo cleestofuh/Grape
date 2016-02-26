@@ -13,6 +13,23 @@ p {
 ul {
   list-style-type: none;
 }
+
+h1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 60pt;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 20pt;
+    color: white;
+    text-align: center;
+}
+
 .modal {
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 300;
