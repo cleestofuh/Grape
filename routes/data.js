@@ -24,7 +24,8 @@ exports.giveData = function(req, res){
         "btn-id": j,
         "act": req.query.whatyoudoO,
         "description": req.query.howyoufeelO,
-        "rating": req.query.ratingO
+        "rating": req.query.ratingO,
+        "category": req.query.category
     };
 
 

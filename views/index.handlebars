@@ -52,17 +52,17 @@
 			 </div>
       </div>
       <div class="row">
-        <h3 class="homep animated fadeIn">grapes:<br>offers of love, compassion, time, energy, or money. An act that brings sunshine into the lives of yourself or others.</h3>
+        <h3 class="homep animated fadeIn">We define grapes as:<br>offers of love, compassion, time, energy, or charity. An act that brings sunshine into the lives of yourself or others.</h3>
       </div>
       <div class="row">
         <div class="col-sm-6">
 					<div class="text-center">
-          	<button id="loveYourself" class="btn btn-lg animated slideInLeft" type="button" data-toggle="modal" data-target="#otherModal">Create a New Deed</button>
+          	<button id="loveYourself" class="btn btn-lg animated slideInLeft" type="button" data-toggle="modal" data-target="#otherModal">Create a New Grape</button>
 					</div>
 				</div>
         <div class="col-sm-6">
 			<div class="text-center">
-				<a id="loveOthers" href="data" class="btn btn-lg animated slideInRight" type="button">View Deeds</a>
+				<a id="loveOthers" href="data" class="btn btn-lg animated slideInRight" type="button">View Grapes</a>
 			</div>
 		</div>
       </div>
@@ -105,6 +105,17 @@
 							    <label for="exampleTextarea">description</label>
 							    <textarea class="form-control" id="howyoufeelO" name="howyoufeelO" rows="3" placeholder="Ex. I paid for Bobby's pizza today while he went to the bathroom. The smile on his face said it all."></textarea>
 							  </div>
+								<div class="form-group">
+									<label for="category">What kind of grape was it?</label>
+									<select class="form-control" name="category" id="category">
+										<option>Love</option>
+										<option>Compassion</option>
+										<option>Time</option>
+										<option>Energy</option>
+										<option>Charity</option>
+										<option>Health</option>
+									</select>
+								</div>
 							  <div class="form-group">
 							  	<label for="exampleTextarea">how grape did you feel?</label>
 							  	<input type="range" name="ratingO" min="0" max="10" value="0" steps="1" onchange="showValueOther(this.value)"/>
