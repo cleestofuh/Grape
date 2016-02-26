@@ -1,3 +1,35 @@
+$('select').on(
+  { "focus": function() {
+      //console.log('clicked!', this, this.value);
+      this.selectedIndex = -1;
+    }
+  , "change": function() {
+      choice = $(this).val();
+      document.getElementById('selectedCat').innerHTML = choice.toUpperCase() + ":";
+
+      if(choice == "Love") {
+        document.getElementById('selectedCatDesc').innerHTML = "These acts of kindness made you feel very happy!";
+      }
+      else if(choice == 'Compassion') {
+        document.getElementById('selectedCatDesc').innerHTML = "These acts of kindness made you feel pretty happy!";
+      }
+      else if(choice == 'Time') {
+        document.getElementById('selectedCatDesc').innerHTML = "These acts of kindness made you feel fairly happy!";
+      }
+      else if(choice == 'Charity') {
+        document.getElementById('selectedCatDesc').innerHTML = "These acts of kindness made you feel somewhat happy.";
+      }
+      else if(choice == 'Charity') {
+        document.getElementById('selectedCatDesc').innerHTML = "These acts of kindness made you feel the happiest! Keep at it!";
+      }
+      else if(choice == 'Health') {
+        document.getElementById('selectedCatDesc').innerHTML = "These acts of kindness made you feel the least happy. What can you do to change this?";
+      }
+
+    }
+  });
+      console.log(document.getElementById('selectedCat').innerHTML);
+
 $(function () {
     $('#reflectionChart').highcharts({
         chart: {
