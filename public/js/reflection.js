@@ -16,7 +16,7 @@ $('select').on(
       else if(choice == 'Time') {
         document.getElementById('selectedCatDesc').innerHTML = "These acts of kindness made you feel fairly happy!";
       }
-      else if(choice == 'Charity') {
+      else if(choice == 'Energy') {
         document.getElementById('selectedCatDesc').innerHTML = "These acts of kindness made you feel somewhat happy.";
       }
       else if(choice == 'Charity') {
