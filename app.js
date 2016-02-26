@@ -12,6 +12,7 @@ var index = require('./routes/index');
 var challenge = require('./routes/challenge');
 var data = require('./routes/data');
 var streak = require('./routes/streak');
+var reflection = require('./routes/reflection');
 
 // Example route
 // var user = require('./routes/user');
@@ -44,6 +45,7 @@ app.get('/challenge', challenge.giveChallenge);
 app.get('/data', data.giveData);
 app.get('/streak', streak.giveStreak);
 app.get('/data/:datamodal', data.projectInfo);
+app.get('/reflection', reflection.view);
 
 // Example route
 // app.get('/users', user.list);

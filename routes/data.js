@@ -1,5 +1,5 @@
 var datajson = require('../public/data.json');
-var kindersjson = require('../public/kinders.json')
+var kindersjson = require('../public/kinders.json');
 var i = 5;
 var j = 5;
 exports.giveData = function(req, res){
