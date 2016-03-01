@@ -1,4 +1,4 @@
-var datajson = require('../public/data.json');
+//var datajson = require('../public/data.json');
 var kindersjson = require('../public/kinders.json')
 var i = 5;
 var j = 5;
@@ -42,12 +42,37 @@ exports.giveData = function(req, res){
 };
 
 exports.projectInfo = function (req, res) {
-  var projectID = req.params.datamodal;
-  var index = projectID.substr('ykModal'.length);
-  //console.log(projectID);
-  //console.log("hello");
 
-  var project = datajson[index];
-  //console.log(datajson[1]);
-  res.json(project);
-}
+  kindersjson.yourkinders = kindersjson.yourkinders.map(function (obj) {
+      if (obj.datamodal == req.body.id) {
+        obj.description = req.body.description;
+        obj.rating = req.body.rating;
+        obj.act = req.body.title;
+      }
+      return obj;
+  });
+
+  console.log(kindersjson.yourkinders);
+  // var projectID = req.params.datamodal;
+  // var index = projectID.substr('ykModal'.length);
+  // console.log("projectID: " + projectID);
+  // console.log("index: " + index);
+
+  // var project = kindersjson["yourkinders"][index];
+  // console.log("data.js project: " + kindersjson["yourkinders"][index]["act"]);
+  // res.json(project);
+};
+
+exports.deleteKinder = function(req, res) {
+  var result = [];
+  kindersjson.yourkinders.map(function (obj) {
+      if (obj.datamodal == req.body.id) {
+        return;
+      }
+      result.push(obj);
+  });
+
+  kindersjson.yourkinders = result;
+  console.log(kindersjson.yourkidners);
+};
+

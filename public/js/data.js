@@ -1,14 +1,69 @@
-$(".remove").click(function(e) {
+$(".edit").click(function(e) {
   e.preventDefault();
+  
   console.log("hello");
+  var container = $(this).closest('.modal');
   var projectID = $(this).closest('.modal').attr('id');
   console.log(projectID);
   var index = projectID.substr('ykModal'.length);
-  console.log(index);
+  console.log("index: "+ index);
+  index = "." + index;
+  //$(index).hide();
+
+  
+  //var getJson = $.get("../kinders.json", editData);
+  var description = container.find('.act-desc').text();
+  var rating = container.find('.act-rating').text();
+  var title = container.find('.act-title').text();
+
+  console.log(description + ' ' + rating);
+
+  var body = {
+    'description': description,
+    'rating': rating,
+    'id': projectID,
+    'title': title
+  };
+
+  $.post("/data", body, editData);
+  //console.log("json: " + json);
+
+  // $(".act-title").innerHTML = title;
+  $('.btnRecent[data-target="#'+projectID+'"]').text(title);
+
+ });
+
+$(".remove").click(function(e){
+  e.preventDefault();
+  var projectID = $(this).closest('.modal').attr('id');
+  console.log('projectID: ' + projectID+ '');
+  var body2 = {
+    'id': projectID
+  };
+  var index = projectID.substr('ykModal'.length);
+  console.log("index: "+ index);
   index = "." + index;
   $(index).hide();
-  });
 
+  $.post("/dataDelete", body2, editData);
+
+
+});
+
+
+function editData(data){
+  console.log("editData: " + data["act"] + "yo ");
+  data["act"] = "GIVE MONEY TO EUNICE";
+  //delete result["act"];
+  console.log("editData: " + data["act"] + "yo ");
+}
+
+/*
+function returnData(result) {
+  console.log("removeProject:" + result["datamodal"] + " ");
+
+}
+*/
 /*var i = 5;
 var j = 5;
 $(document).ready(function(){
