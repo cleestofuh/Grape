@@ -23,12 +23,12 @@ exports.giveData = function(req, res){
     };
 
 
-  if(req.query.yourradio == 'on') {
+  if(req.query.radiochoice == 'yourself') {
     kindersjson["yourkinders"].unshift(newKinderOther);
     i++;
   }
 
-  if(req.query.otherradio == 'on') {
+  if(req.query.radiochoice == 'others') {
     kindersjson["otherkinders"].unshift(newKinderOther);
     j++;
   }
