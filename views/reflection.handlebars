@@ -8,14 +8,18 @@
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
+		<!--Load the AJAX API-->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,300,100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="css/animate.css" type="text/css">
-	<link href="css/hover.css" rel="stylesheet" media="all">
+		<link rel="stylesheet" href="css/animate.css" type="text/css">
+		<link href="css/hover.css" rel="stylesheet" media="all">
 
 	</head>
 
@@ -47,42 +51,41 @@
 		</nav>
 
 		<div class="container">
-			<div class="recentDataTitle animated zoomIn">
+			<div class="recentDataTitle animated zoomIn" style="font-size:40pt;">
 				REFLECTION
 			</div>
 			<div class="form-group">
-				<label for="category">Choose a category</label>
+				<label for="category" style="color:white;font-family:'Open Sans Condensed', sans-serif;font-weight:300;">Choose a category</label>
 				<select class="form-control" name="category" id="category">
 					<option id="catLove">Love</option>
-					<option id="catCompassion">Compassion</option>
 					<option id="catTime">Time</option>
 					<option id="catEnergy">Energy</option>
 					<option id="catCharity">Charity</option>
 					<option id="catHealthy">Health</option>
+					<option id="catOther">Other</option>
 				</select>
 			</div>
 
 
-			<h1 id="selectedCat">LOVE:</h1>
+			<h1 id="selectedCat">Love:</h1>
 			<h2 id="selectedCatDesc">These acts of kindness made you feel very happy!</h2>
 
 			<br>
-			<div id="reflectionChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-		</div>
-
-			<h1 class="homep"> <u>LIST OF INFO</u> </h1>
+			<!--Div that will hold the pie chart-->
+			<div id="donutchart"></div>
+			<br>
 
 			<div class="text-center">
 				<div class="btn-group" data-toggle="btns">
-				  <button class="btn btn-lg btnTab1" href="#YOURSDAY" data-toggle="tab">YOURS</button>
-				  <button class="btn btn-lg btnTab1" href="#OTHERSDAY" data-toggle="tab">OTHERS</button>
+				  <button class="btn btn-lg btnTab1" href="#YOURSDAY" data-toggle="tab">Yours</button>
+				  <button class="btn btn-lg btnTab1" href="#OTHERSDAY" data-toggle="tab">Others</button>
 				</div>
 
 				<div class="tab-content">
 					<div class="tab-pane active" id="YOURSDAY">
 						<div class="col-md-12">
 							<div class="recentDataTitle animated zoomIn">
-								YOUR GRAPES
+								Your Grapes
 							</div>
 							<div id="recentData" class="animated zoomIn">
 								<ul>
@@ -100,7 +103,7 @@
 					<div class="tab-pane" id="OTHERSDAY">
 						<div class="col-md-12">
 							<div class="recentDataTitle animated zoomIn">
-								OTHER GRAPES
+								Other Grapes
 							</div>
 							<div id="recentData" class="animated zoomIn">
 								<ul>
@@ -127,7 +130,7 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<h4 class="modal-title">add grape</h4>
+			<h4 class="modal-title">Add Grape</h4>
 		</div>
 		<div class="modal-body">
 			<form id="other-form" role="form" method="get" action="/data">
@@ -139,11 +142,11 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail1">what did you do?</label>
+					<label for="exampleInputEmail1">What did you do?</label>
 					<input type="text" class="form-control" id="whatyoudoO" name="whatyoudoO" placeholder="Ex. Paid for Bobby's lunch.">
 				</div>
 				<div class="form-group">
-					<label for="exampleTextarea">description</label>
+					<label for="exampleTextarea">Description</label>
 					<textarea class="form-control" id="howyoufeelO" name="howyoufeelO" rows="3" placeholder="Ex. I paid for Bobby's pizza today while he went to the bathroom. The smile on his face said it all."></textarea>
 				</div>
 				<div class="form-group">
@@ -158,7 +161,7 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="exampleTextarea">how grape did you feel?</label>
+					<label for="exampleTextarea">How grape did you feel?</label>
 					<input type="range" name="ratingO" min="0" max="10" value="0" steps="1" onchange="showValueOther(this.value)"/>
 					<span>0</span><span style="float:right;">10</span>
 					<div class="row">
@@ -201,7 +204,7 @@
 
 		</div>
 
-
+</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="https://code.highcharts.com/highcharts.js"></script>
 		<script src="https://code.highcharts.com/modules/exporting.js"></script>

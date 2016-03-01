@@ -10,12 +10,13 @@
 
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,300,100' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="css/animate.css" type="text/css">
-	<link href="css/hover.css" rel="stylesheet" media="all">
+		<link rel="stylesheet" href="css/animate.css" type="text/css">
+		<link href="css/hover.css" rel="stylesheet" media="all">
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
 
@@ -53,27 +54,31 @@
 			</div>
 
 			<div class="btn-group" data-toggle="btns">
-			  <button class="btn btn-lg btnTab" href="#daily" data-toggle="tab">DAILY</button>
-			  <button class="btn btn-lg btnTab" href="#weekly" data-toggle="tab">WEEKLY</button>
-			  <button class="btn btn-lg btnTab" href="#monthly" data-toggle="tab">MONTHLY</button>
+			  <button id="day1" class="btn btn-lg btnTab" href="#daily" data-toggle="tab">Daily</button>
+			  <button id="week1" class="btn btn-lg btnTab" href="#weekly" data-toggle="tab">Weekly</button>
+			  <button id="month1" class="btn btn-lg btnTab" href="#monthly" data-toggle="tab">Monthly</button>
 			</div>
 			<br><br>
 			<div class="tab-content">
 			  <div class="tab-pane active" id="daily">
 						<div class="container">
-							<div id="week" class="animated zoomIn chart"></div>
+							<div id="dailyChart" class="animated zoomIn"></div>
+							<br>
 						</div>
 
 
 						<div class="btn-group" data-toggle="btns">
-						  <button class="btn btn-lg btnTab1" href="#YOURSDAY" data-toggle="tab">YOURS</button>
-						  <button class="btn btn-lg btnTab1" href="#OTHERSDAY" data-toggle="tab">OTHERS</button>
+						  <button class="btn btn-lg btnTab1" href="#YOURSDAY" data-toggle="tab">Yours</button>
+						  <button class="btn btn-lg btnTab1" href="#OTHERSDAY" data-toggle="tab">Others</button>
 						</div>
 
 						<div class="tab-content">
 							<div class="tab-pane active" id="YOURSDAY">
 								<div class="col-md-12">
 									<br>
+									<div class="recentDataTitle animated zoomIn">
+										Your Grapes
+									</div>
 									<div id="recentData" class="animated zoomIn">
 										<ul>
 											{{#each yourkinderact}}
@@ -89,8 +94,9 @@
 							</div>
 							<div class="tab-pane" id="OTHERSDAY">
 								<div class="col-md-12">
+									<br>
 									<div class="recentDataTitle animated zoomIn">
-										OTHER GRAPES
+										Other Grapes
 									</div>
 									<div id="recentData" class="animated zoomIn">
 										<ul>
@@ -111,114 +117,120 @@
 
 				</div>
 
-			  <div class="tab-pane" id="weekly">
-					<div class="container">
-						<div id="month" class="animated zoomIn chart"></div>
-					</div>
+				  <div class="tab-pane" id="weekly">
+							<div class="container">
+								<div id="weeklyChart" class="animated zoomIn"></div>
+								<br>
+							</div>
 
-					<div class="btn-group" data-toggle="btns">
-					  <button class="btn btn-lg btnTab1 active" href="#YOURSWEEK" data-toggle="tab">YOURS</button>
-					  <button class="btn btn-lg btnTab1" href="#OTHERSWEEK" data-toggle="tab">OTHERS</button>
-					</div>
 
-					<div class="tab-content">
-						<div class="tab-pane active" id="YOURSWEEK">
-							<div class="col-md-12">
-								<div class="recentDataTitle animated zoomIn">
-									YOUR GRAPES
+							<div class="btn-group" data-toggle="btns">
+							  <button class="btn btn-lg btnTab1" href="#YOURSWEEK" data-toggle="tab">Yours</button>
+							  <button class="btn btn-lg btnTab1" href="#OTHERSWEEK" data-toggle="tab">Others</button>
+							</div>
+
+							<div class="tab-content">
+								<div class="tab-pane active" id="YOURSWEEK">
+									<div class="col-md-12">
+										<br>
+										<div class="recentDataTitle animated zoomIn">
+											Your Grapes
+										</div>
+										<div id="recentData" class="animated zoomIn">
+											<ul>
+												{{#each yourkinderact}}
+												<li class="{{btn-id}}">
+													<button type="button" class="btnRecent hvr-shrink" data-toggle="modal" data-target="#{{datamodal}}">
+																{{act}}
+														</button>
+												</li>
+												{{/each}}
+											</ul>
+										</div>
+									</div>
 								</div>
-								<div id="recentData" class="animated zoomIn">
-									<ul>
-										{{#each yourkinderact}}
-										<li class="{{btn-id}}">
-											<button type="button" class="btnRecent hvr-shrink" data-toggle="modal" data-target="#{{datamodal}}">
-														{{act}}
-												</button>
-										</li>
-										{{/each}}
-									</ul>
+								<div class="tab-pane" id="OTHERSWEEK">
+									<div class="col-md-12">
+										<br>
+										<div class="recentDataTitle animated zoomIn">
+											Other Grapes
+										</div>
+										<div id="recentData" class="animated zoomIn">
+											<ul>
+												{{#each otherkinderact}}
+												<li class="{{btn-id}}">
+													<button type="button" class="btnRecent hvr-shrink" data-toggle="modal" data-target="#{{datamodal}}">
+																{{act}}
+														</button>
+												</li>
+												{{/each}}
+											</ul>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="tab-pane" id="OTHERSWEEK">
-							<div class="col-md-12">
-								<div class="recentDataTitle animated zoomIn">
-									OTHER GRAPES
-								</div>
-								<div id="recentData" class="animated zoomIn">
-									<ul>
-										{{#each otherkinderact}}
-										<li class="{{btn-id}}">
-											<button type="button" class="btnRecent hvr-shrink" data-toggle="modal" data-target="#{{datamodal}}">
-														{{act}}
-												</button>
-										</li>
-										{{/each}}
-									</ul>
-								</div>
-							</div>
-						</div>
-				    </div>
 
-						<button type"button" class="add-btn" data-toggle="modal" data-target="#addmodal">+</button>
+							<button type"button" class="add-btn" data-toggle="modal" data-target="#addmodal">+</button>
 
-				</div>
-
-			  <div class="tab-pane" id="monthly">
-
-					<div class="container">
-						<div id="year" class="animated zoomIn chart"></div>
 					</div>
 
-					<div class="btn-group" data-toggle="btns">
-					  <button class="btn btn-lg btnTab1 active" href="#YOURSMONTH" data-toggle="tab">YOURS</button>
-					  <button class="btn btn-lg btnTab1" href="#OTHERSMONTH" data-toggle="tab">OTHERS</button>
-					</div>
 
-					<div class="tab-content">
-						<div class="tab-pane active" id="YOURSMONTH">
-							<div class="col-md-12">
-								<div class="recentDataTitle animated zoomIn">
-									YOUR GRAPES
+					  <div class="tab-pane" id="monthly">
+								<div class="container">
+									<div id="monthlyChart" class="animated zoomIn"></div>
+									<br>
 								</div>
-								<div id="recentData" class="animated zoomIn">
-									<ul>
-										{{#each yourkinderact}}
-										<li class="{{btn-id}}">
-											<button type="button" class="btnRecent hvr-shrink" data-toggle="modal" data-target="#{{datamodal}}">
-														{{act}}
-												</button>
-										</li>
-										{{/each}}
-									</ul>
+
+
+								<div class="btn-group" data-toggle="btns">
+								  <button class="btn btn-lg btnTab1" href="#YOURSMONTH" data-toggle="tab">Yours</button>
+								  <button class="btn btn-lg btnTab1" href="#OTHERSMONTH" data-toggle="tab">Others</button>
 								</div>
-							</div>
+
+								<div class="tab-content">
+									<div class="tab-pane active" id="YOURSMONTH">
+										<div class="col-md-12">
+											<br>
+											<div class="recentDataTitle animated zoomIn">
+												Your Grapes
+											</div>
+											<div id="recentData" class="animated zoomIn">
+												<ul>
+													{{#each yourkinderact}}
+													<li class="{{btn-id}}">
+														<button type="button" class="btnRecent hvr-shrink" data-toggle="modal" data-target="#{{datamodal}}">
+																	{{act}}
+															</button>
+													</li>
+													{{/each}}
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="OTHERSMONTH">
+										<div class="col-md-12">
+											<br>
+											<div class="recentDataTitle animated zoomIn">
+												Other Grapes
+											</div>
+											<div id="recentData" class="animated zoomIn">
+												<ul>
+													{{#each otherkinderact}}
+													<li class="{{btn-id}}">
+														<button type="button" class="btnRecent hvr-shrink" data-toggle="modal" data-target="#{{datamodal}}">
+																	{{act}}
+															</button>
+													</li>
+													{{/each}}
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<button type"button" class="add-btn" data-toggle="modal" data-target="#addmodal">+</button>
+
 						</div>
-						<div class="tab-pane" id="OTHERSMONTH">
-							<div class="col-md-6">
-								<div class="recentDataTitle animated zoomIn">
-									OTHER GRAPES
-								</div>
-								<div id="recentData" class="animated zoomIn">
-									<ul>
-										{{#each otherkinderact}}
-										<li class="{{btn-id}}">
-											<button type="button" class="btnRecent hvr-shrink" data-toggle="modal" data-target="#{{datamodal}}">
-														{{act}}
-												</button>
-										</li>
-										{{/each}}
-									</ul>
-								</div>
-							</div>
-						</div>
-
-				    </div>
-
-						<button type"button" class="add-btn" data-toggle="modal" data-target="#addmodal">+</button>
-
-			</div>
-
 
 		</div>
 	</div>
@@ -306,7 +318,7 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<h4 class="modal-title">add grape</h4>
+			<h4 class="modal-title">Add Grape</h4>
 		</div>
 		<div class="modal-body">
 			<form id="other-form" role="form" method="get" action="/data">
@@ -318,11 +330,11 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail1">what did you do?</label>
+					<label for="exampleInputEmail1">What did you do?</label>
 					<input type="text" class="form-control" id="whatyoudoO" name="whatyoudoO" placeholder="Ex. Paid for Bobby's lunch.">
 				</div>
 				<div class="form-group">
-					<label for="exampleTextarea">description</label>
+					<label for="exampleTextarea">Description</label>
 					<textarea class="form-control" id="howyoufeelO" name="howyoufeelO" rows="3" placeholder="Ex. I paid for Bobby's pizza today while he went to the bathroom. The smile on his face said it all."></textarea>
 				</div>
 				<div class="form-group">
@@ -337,7 +349,7 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="exampleTextarea">how grape did you feel?</label>
+					<label for="exampleTextarea">How grape did you feel?</label>
 					<input type="range" name="ratingO" min="0" max="10" value="0" steps="1" onchange="showValueOther(this.value)"/>
 					<span>0</span><span style="float:right;">10</span>
 					<div class="row">
