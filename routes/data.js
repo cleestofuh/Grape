@@ -1,21 +1,16 @@
-//var datajson = require('../public/data.json');
-var kindersjson = require('../public/kinders.json')
+
+var kindersjson = require('../public/kinders.json');
+
 var i = 5;
 var j = 5;
+
 exports.giveData = function(req, res){
 
-/*  var newKinderYou = {
-        "datamodal": "ykModal" + i,
-        "btn-id": i,
-        "act": req.query.whatyoudo,
-        "description": req.query.howyoufeel,
-        "rating": req.query.rating
-    };*/
   var type;
-  if(req.query.yourradio == 'on') {
+  if(req.query.radiochoice == 'yourself') {
     type = "yours";
   }
-  if(req.query.otherradio == 'on') {
+  if(req.query.radiochoice == 'others') {
     type = "others";
   }
   var newKinderOther = {
@@ -24,16 +19,17 @@ exports.giveData = function(req, res){
         "btn-id": j,
         "act": req.query.whatyoudoO,
         "description": req.query.howyoufeelO,
-        "rating": req.query.ratingO
+        "rating": req.query.ratingO,
+        "category": req.query.category
     };
 
 
-  if(req.query.yourradio == 'on') {
+  if(req.query.radiochoice == 'yourself') {
     kindersjson["yourkinders"].unshift(newKinderOther);
     i++;
   }
 
-  if(req.query.otherradio == 'on') {
+  if(req.query.radiochoice == 'others') {
     kindersjson["otherkinders"].unshift(newKinderOther);
     j++;
   }

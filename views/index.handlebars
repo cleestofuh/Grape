@@ -10,7 +10,7 @@
 
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,300,100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -38,6 +38,7 @@
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="/">HOME</a></li>
 		        <li><a href="data">GRAPES</a></li>
+						<li><a href="reflection">REFLECTION</a></li>
 						<li><a href="streak">STREAK</a></li>
 						<li><a href="challenge">CHALLENGE</a></li>
 		      </ul>
@@ -52,20 +53,28 @@
 			 </div>
       </div>
       <div class="row">
-        <h3 class="homep animated fadeIn">grapes:<br>offers of love, compassion, time, energy, or money. An act that brings sunshine into the lives of yourself or others.</h3>
+        <h3 class="homep animated fadeIn">We define grapes as:<br>offers of love, compassion, time, energy, or charity. An act that brings sunshine into the lives of yourself or others.</h3>
       </div>
       <div class="row">
         <div class="col-sm-6">
 					<div class="text-center">
-          	<button id="loveYourself" class="btn btn-lg animated slideInLeft" type="button" data-toggle="modal" data-target="#otherModal">Create a New Deed</button>
+          	<button id="loveYourself" class="btn btn-lg animated slideInLeft" type="button" data-toggle="modal" data-target="#otherModal">Create a New Grape</button>
 					</div>
 				</div>
+			<div class="row">
         <div class="col-sm-6">
-			<div class="text-center">
-				<a id="loveOthers" href="data" class="btn btn-lg animated slideInRight" type="button">View Deeds</a>
-			</div>
-		</div>
+						<div class="text-center">
+							<a id="viewGrapes" href="data" class="btn btn-lg animated slideInRight" type="button">View Grapes</a>
+						</div>
+					</div>
       </div>
+			<div class="row">
+				<div class="col-sm-6">
+						<div class="text-center">
+							<a id="viewReflection" href="data" class="btn btn-lg animated slideInRight" type="button">Reflection</a>
+						</div>
+					</div>
+			</div>
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="text-center">
@@ -86,27 +95,38 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">add grape</h4>
+							<h4 class="modal-title">Add Grape</h4>
 						</div>
 						<div class="modal-body">
 							<form id="other-form" role="form" method="get" action="/data">
 								<div class="form-group">
 									<label for="YouOrOthers">Is this good deed for yourself or others?</label>
 									<div class="radio-btns">
-										<label class="radio-inline"><input id="yourradio" type="radio" name="yourradio">Yourself</label>
-										<label class="radio-inline"><input id="otherradio" type="radio" name="otherradio">Others</label>
+										<label class="radio-inline"><input id="yourradio" type="radio" name="radiochoice" value="yourself">Yourself</label>
+										<label class="radio-inline"><input id="otherradio" type="radio" name="radiochoice" value="others">Others</label>
 									</div>
 								</div>
 							  <div class="form-group">
-							    <label for="exampleInputEmail1">what did you do?</label>
+							    <label for="exampleInputEmail1">What did you do?</label>
 							    <input type="text" class="form-control" id="whatyoudoO" name="whatyoudoO" placeholder="Ex. Paid for Bobby's lunch.">
 							  </div>
 							  <div class="form-group">
-							    <label for="exampleTextarea">description</label>
+							    <label for="exampleTextarea">Description</label>
 							    <textarea class="form-control" id="howyoufeelO" name="howyoufeelO" rows="3" placeholder="Ex. I paid for Bobby's pizza today while he went to the bathroom. The smile on his face said it all."></textarea>
 							  </div>
+								<div class="form-group">
+									<label for="category">What kind of grape was it?</label>
+									<select class="form-control" name="category" id="category">
+										<option>Love</option>
+										<option>Compassion</option>
+										<option>Time</option>
+										<option>Energy</option>
+										<option>Charity</option>
+										<option>Health</option>
+									</select>
+								</div>
 							  <div class="form-group">
-							  	<label for="exampleTextarea">how grape did you feel?</label>
+							  	<label for="exampleTextarea">How grape did you feel?</label>
 							  	<input type="range" name="ratingO" min="0" max="10" value="0" steps="1" onchange="showValueOther(this.value)"/>
 							  	<span>0</span><span style="float:right;">10</span>
 									<div class="row">
@@ -120,6 +140,7 @@
 
 				</div>
 			</div>
+			<!-- END MODAL -->
 
 			<div class="modal fade" id="helpModal" role="dialog">
 				<div class="modal-dialog">

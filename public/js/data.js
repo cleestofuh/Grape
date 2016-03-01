@@ -58,218 +58,88 @@ function editData(data){
   console.log("editData: " + data["act"] + "yo ");
 }
 
-/*
-function returnData(result) {
-  console.log("removeProject:" + result["datamodal"] + " ");
 
-}
-*/
-/*var i = 5;
-var j = 5;
-$(document).ready(function(){
-    $('#yourself-form').on('submit', function(e){
-        e.preventDefault();
-        $.getJSON("data.json", function(data) {
-          var newKinderYou = {
-                "datamodal": "ykModal" + i,
-                "act": req.query.whatyoudo,
-                "description": req.query.howyoufeel,
-                "rating": req.query.rating
-            };
+  google.charts.load('44', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
 
-          var newKinderOther = {
-                "datamodal": "okModal5" + j,
-                "act": req.query.whatyoudoO,
-                "description": req.query.howyoufeelO,
-                "rating": req.query.ratingO
-            };
+  function drawChart() {
+    var dailyData = google.visualization.arrayToDataTable([
+      ['Day', 'Yourself', 'Others'],
+      ['Sun',  0,      0],
+      ['Mon',  1,      3],
+      ['Tu',  1,      4],
+      ['Wed',  3,       2],
+      ['Thu',  2,      1],
+      ['Fri',  0,      0],
+      ['Sat',  0,      0]
+    ]);
+    var weeklyData = google.visualization.arrayToDataTable([
+      ['Week', 'Yourself', 'Others'],
+      ['1/1 - 1/7',  0,      0],
+      ['1/8 - 1/14',  1,      3],
+      ['1/15 - 1/21',  1,       4],
+      ['1/22 - 1/28',  3,      2],
+      ['1/29 - 2/4',  2,      1]
+    ]);
+    var monthlyData = google.visualization.arrayToDataTable([
+      ['Month', 'Yourself', 'Others'],
+      ['Jan',  10,      1],
+      ['Feb',  20,      14],
+      ['Mar',  16,       26],
+      ['Apr',  17,      10],
+      ['May',  8,      10],
+      ['Jun',  6,      14],
+      ['Jul',  5,      16],
+      ['Aug',  11,      20],
+      ['Sep',  12,      18],
+      ['Oct',  13,      21],
+      ['Nov',  0,      0],
+      ['Dec',  0,      0]
+    ]);
 
-          data["yourkinders"].push(newKinderYou);
-          data["otherkinders"].push(newKinderOther);
-          i++;
-          j++;
-        });
+    var dailyOptions = {
+      title: 'Daily Grapes',
+      legend: { position: 'bottom' },
+      backgroundColor: '#E0D2E7',
+      'chartArea': {'width': '90%', 'height': '50%'},
+      'fontName': 'Open Sans Condensed',
+      'fontSize': '16'
+    };
+    var weeklyOptions = {
+      title: 'Weekly Grapes',
+      legend: { position: 'bottom' },
+      backgroundColor: '#E0D2E7',
+      'chartArea': {'width': '90%', 'height': '50%'},
+      'fontName': 'Open Sans Condensed',
+      'fontSize': '16'
+    };
+    var monthlyOptions = {
+      title: 'Monthly Grapes',
+      legend: { position: 'bottom' },
+      backgroundColor: '#E0D2E7',
+      'chartArea': {'width': '80%', 'height': '50%'},
+      'fontName': 'Open Sans Condensed',
+      'fontSize': '16'
+    };
 
+
+    var dailychart = new google.visualization.LineChart(document.getElementById('dailyChart'));
+    var weeklychart = new google.visualization.LineChart(document.getElementById('weeklyChart'));
+    var monthlychart = new google.visualization.LineChart(document.getElementById('monthlyChart'));
+    dailychart.draw(dailyData, dailyOptions);
+
+    $('button[class="btn btn-lg btnTab"]').on('shown.bs.tab', function (e) {
+      if($(e.target).attr('id') == 'day1')
+      {
+        dailychart.draw(dailyData, dailyOptions);
+      }
+      if($(e.target).attr('id') == 'week1')
+      {
+        weeklychart.draw(weeklyData, weeklyOptions);
+      }
+      if($(e.target).attr('id') == 'month1')
+      {
+        monthlychart.draw(monthlyData, monthlyOptions);
+      }
     });
-});*/
-
-$(function () {
-    $('#week').highcharts({
-        chart: {
-              polar: true,
-              type: 'line',
-              backgroundColor: 'rgba(255, 255, 255, 0.3)'
-        },
-        plotOptions: {
-          series: {
-            animation: {
-              duration: 1000
-            }
-          }
-        },
-        title: {
-            style: {
-              color: 'white'
-            },
-            text: 'DAILY',
-            x: -20 //center
-        },
-        xAxis: {
-          labels: {
-            style: {
-              color: 'white'
-            }
-          },
-            categories: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-        },
-        yAxis: {
-            title: {
-              style: {
-                color: 'white'
-              },
-                text: '# KINDERS'
-            },
-            labels: {
-              style: {
-                color: 'white',
-              }
-            },
-
-        },
-        tooltip: {
-            valueSuffix: ' KINDERS'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'YOURSELF',
-            data: [0, 1, 1, 3, 2, 0, 0]
-        }, {
-            name: 'OTHERS',
-            data: [0, 3, 4, 2, 1, 0, 0]
-        }]
-    });
-    $('#month').highcharts({
-        chart: {
-              polar: true,
-              type: 'line',
-              backgroundColor: 'rgba(255, 255, 255, 0.3)'
-        },
-        plotOptions: {
-          series: {
-            animation: {
-              duration: 1500
-            }
-          }
-        },
-        title: {
-            style: {
-              color: 'white'
-            },
-            text: 'WEEKLY',
-            x: -20 //center
-        },
-        xAxis: {
-          labels: {
-            style: {
-              color: 'white'
-            }
-          },
-            categories: ['1/1 - 1/7', '1/8 - 1/14', '1/15 - 1/21', '1/22 - 1/28', '1/29 - 2/4']
-        },
-        yAxis: {
-            title: {
-              style: {
-                color: 'white'
-              },
-                text: '# KINDERS'
-            },
-            labels: {
-              style: {
-                color: 'white',
-              }
-            },
-
-        },
-        tooltip: {
-            valueSuffix: 'KINDERS'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'YOURSELF',
-            data: [0, 1, 1, 3, 2]
-        }, {
-            name: 'OTHERS',
-            data: [0, 3, 4, 2, 1]
-        }]
-    });
-    $('#year').highcharts({
-        chart: {
-              polar: true,
-              type: 'line',
-              backgroundColor: 'rgba(255, 255, 255, 0.3)'
-        },
-        plotOptions: {
-          series: {
-            animation: {
-              duration: 2200
-            }
-          }
-        },
-        title: {
-            style: {
-              color: 'white'
-            },
-            text: 'MONTHLY',
-            x: -20 //center
-        },
-        xAxis: {
-          labels: {
-            style: {
-              color: 'white'
-            }
-          },
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        },
-        yAxis: {
-            title: {
-              style: {
-                color: 'white'
-              },
-                text: '# KINDERS'
-            },
-            labels: {
-              style: {
-                color: 'white',
-              }
-            },
-
-        },
-        tooltip: {
-            valueSuffix: 'KINDERS'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'YOURSELF',
-            data: [10, 20, 16, 17, 8, 6, 5, 11, 12, 13, 0, 0]
-        }, {
-            name: 'OTHERS',
-            data: [11, 14, 26, 10, 10, 14, 16, 20, 18, 21, 0, 0]
-        }]
-    });
-});
+  }

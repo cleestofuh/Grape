@@ -3,14 +3,14 @@
 	<head>
 		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>KINDER</title>
+		<title>GRAPE</title>
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,300,100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
 
     <!-- Custom CSS -->
@@ -32,14 +32,15 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-					<a href="/" class="pull-left nav-brand"><img style="width: 250px;height:50px;" src="img/grapelogo.png"></a>
+					<a href="/" class="pull-left nav-brand"><img style="width: 150px;height:50px;" src="img/grapelogo.png"></a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse center" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li><a href="/">ADD GRAPES</a></li>
+		        <li><a data-toggle="modal" data-target="#addmodal">ADD GRAPES</a></li>
 		        <li><a href="data">GRAPES</a></li>
+						<li><a href="reflection">REFLECTION</a></li>
 						<li class="active"><a href="streak">STREAK</a></li>
 						<li><a href="challenge">CHALLENGE</a></li>
 		      </ul>
@@ -87,7 +88,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div id="compare" class="boxed animated bounceInDown">
-            <h1 class="homestreak">COMPARE YOUR STREAKS WITH FRIENDS</h1>
+            <h3 class="homestreak">COMPARE YOUR STREAKS WITH FRIENDS</h3>
               <div class="row">
                 <div class="span 5">
 
@@ -116,89 +117,67 @@
                     </div>
                   </div>
                   {{/each}}
-
-                  <!--
-                  <div id="friend2">
-                    <div class="text-center">
-                      <button type="button" class="btn btn-lg hvr-shrink">
-                          FRIEND 2
-                      </button>
-                    </div>
-                    <div class="row">
-                      <div class="fr friendsInfo animated bounceIn">
-                        <div>
-                          <h3>CURRENT STREAK</h3>
-                        </div>
-                        <div>
-                          <h3>LONGEST STREAK</h3>
-                        </div>
-                        <div>
-                          <h3>MOST KINDERS</h3>
-                        </div>
-                        <div>
-                          <h3>TOTAL KINDERS</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div id="friend3">
-                    <div class="text-center">
-                      <button type="button" class="btn btn-lg hvr-shrink">
-                        FRIEND 3
-                      </button>
-                    </div>
-                    <div class="row">
-                      <div class="fr friendsInfo animated bounceIn">
-                        <div>
-                          <h3>CURRENT STREAK</h3>
-                        </div>
-                        <div>
-                          <h3>LONGEST STREAK</h3>
-                        </div>
-                        <div>
-                          <h3>MOST KINDERS</h3>
-                        </div>
-                        <div>
-                          <h3>TOTAL KINDERS</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div id="friend4">
-                    <div class="text-center">
-                      <button type="button" class="btn btn-lg hvr-shrink">
-                          FRIEND 4
-                      </button>
-                    </div>
-                    <div class="row">
-                      <div class="fr friendsInfo animated bounceIn">
-                        <div>
-                          <h3>CURRENT STREAK</h3>
-                        </div>
-                        <div>
-                          <h3>LONGEST STREAK</h3>
-                        </div>
-                        <div>
-                          <h3>MOST KINDERS</h3>
-                        </div>
-                        <div>
-                          <h3>TOTAL KINDERS</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-              -->
-
                 </div>
               </div>
          </div>
         </div>
       </div>
+
+
+			<!-- Modal -->
+	<div class="modal fade" id="addmodal" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Add Grape</h4>
+			</div>
+			<div class="modal-body">
+				<form id="other-form" role="form" method="get" action="/data">
+					<div class="form-group">
+						<label for="YouOrOthers">Is this good deed for yourself or others?</label>
+						<div class="radio-btns">
+							<label class="radio-inline"><input id="yourradio" type="radio" name="radiochoice" value="yourself">Yourself</label>
+							<label class="radio-inline"><input id="otherradio" type="radio" name="radiochoice" value="others">Others</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">What did you do?</label>
+						<input type="text" class="form-control" id="whatyoudoO" name="whatyoudoO" placeholder="Ex. Paid for Bobby's lunch.">
+					</div>
+					<div class="form-group">
+						<label for="exampleTextarea">Description</label>
+						<textarea class="form-control" id="howyoufeelO" name="howyoufeelO" rows="3" placeholder="Ex. I paid for Bobby's pizza today while he went to the bathroom. The smile on his face said it all."></textarea>
+					</div>
+					<div class="form-group">
+						<label for="category">What kind of grape was it?</label>
+						<select class="form-control" name="category" id="category">
+							<option>Love</option>
+							<option>Compassion</option>
+							<option>Time</option>
+							<option>Energy</option>
+							<option>Charity</option>
+							<option>Health</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="exampleTextarea">How grape did you feel?</label>
+						<input type="range" name="ratingO" min="0" max="10" value="0" steps="1" onchange="showValueOther(this.value)"/>
+						<span>0</span><span style="float:right;">10</span>
+						<div class="row">
+							<p style="color:black;font-size:12pt;">You feel <span id="rangeo">0</span> grape on a scale of 10.</p>
+						</div>
+					</div>
+					<input type="submit" class="btn btn-lg" value="Submit"/>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	</div>
+	<!-- END MODAL -->
 
       <!-- THIS IS FOR THE HELP BUTTON -->
       <div class="row" id="fixedbutton">
@@ -233,6 +212,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/streak.js"></script>
+		<script src="js/index.js"></script>
 
 	</body>
 </html>

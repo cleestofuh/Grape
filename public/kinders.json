@@ -7,7 +7,8 @@
       "btn-id": "0",
       "act": "Ate Salad",
       "description": "I ate salad instead of McDonalds. I'm Healthy.",
-      "rating": "4"
+      "rating": "4",
+      "category": "Health"
     },
     {
       "type": "yours",
@@ -15,7 +16,8 @@
       "btn-id": "1",
       "act": "Went to the gym.",
       "description": "WENT TO THE GYM AT 9AM THIS MORNING. FEELS GREAT!!",
-      "rating": "5"
+      "rating": "5",
+      "category": "Health"
     },
     {
       "type": "yours",
@@ -23,15 +25,17 @@
       "btn-id": "2",
       "act": "Finished my homework early",
       "description": "I finished my homework two days before it was due. I have so much free time now.",
-      "rating": "3"
+      "rating": "3",
+      "category": "Time"
     },
     {
       "type": "yours",
       "datamodal": "ykModal3",
       "btn-id": "3",
       "act": "I took the day to relax.",
-      "description": "Last week was s ostressful. Taking the day off feels so good.",
-      "rating": "2"
+      "description": "Last week was so stressful. Taking the day off feels so good.",
+      "rating": "2",
+      "category": "Health"
     }
   ],
 
@@ -42,7 +46,8 @@
       "btn-id": "0",
       "act": "Bought food for someone",
       "description": "I bought food for Eunice. I'm happy now.",
-      "rating": "4"
+      "rating": "4",
+      "category": "Chairty"
     },
     {
       "type": "other",
@@ -50,7 +55,8 @@
       "btn-id": "1",
       "act": "Walked my friend to class",
       "description": "I made Eunice go to class. I'm happy now.",
-      "rating": "5"
+      "rating": "5",
+      "category": "Time"
     },
     {
       "type": "other",
@@ -58,7 +64,8 @@
       "btn-id": "2",
       "act": "Helped an old lady cross the street",
       "description": "I walked an old lady named Eunice. I'm happy now.",
-      "rating": "1"
+      "rating": "1",
+      "category": "Compassion"
     },
     {
       "type": "other",
@@ -66,7 +73,8 @@
       "btn-id": "3",
       "act": "Said goodluck to my friend before her midterm.",
       "description": "Hopefully Eunice will get an A so she will be successful",
-      "rating": "1"
+      "rating": "1",
+      "category": "Love"
     }
   ],
 

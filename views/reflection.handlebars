@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+		<title>GRAPE</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+		<!--Load the AJAX API-->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    <!-- FONTS -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/animate.css" type="text/css">
+		<link href="css/hover.css" rel="stylesheet" media="all">
+
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default center">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+					<a href="/" class="pull-left nav-brand"><img style="width: 150px;height:50px;" src="img/grapelogo.png"></a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse center" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+						<li><a data-toggle="modal" data-target="#addmodal">ADD GRAPES</a></li>
+		        <li><a href="data">GRAPES</a></li>
+						<li class="active"><a href="reflection">REFLECTION</a></li>
+						<li><a href="streak">STREAK</a></li>
+						<li><a href="challenge">CHALLENGE</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+
+		<div class="container">
+			<div class="recentDataTitle animated zoomIn" style="font-size:40pt;">
+				REFLECTION
+			</div>
+			<div class="form-group">
+				<label for="category" style="color:white;font-family:'Open Sans Condensed', sans-serif;font-weight:300;">Choose a category</label>
+				<select class="form-control" name="category" id="category">
+					<option id="catLove">Love</option>
+					<option id="catTime">Time</option>
+					<option id="catEnergy">Energy</option>
+					<option id="catCharity">Charity</option>
+					<option id="catHealthy">Health</option>
+					<option id="catOther">Other</option>
+				</select>
+			</div>
+
+
+			<h1 id="selectedCat">Love:</h1>
+			<h2 id="selectedCatDesc">These acts of kindness made you feel very happy!</h2>
+
+			<br>
+			<!--Div that will hold the pie chart-->
+			<div id="donutchart"></div>
+			<br>
+
+			<div class="text-center">
+				<div class="btn-group" data-toggle="btns">
+				  <button class="btn btn-lg btnTab1" href="#YOURSDAY" data-toggle="tab">Yours</button>
+				  <button class="btn btn-lg btnTab1" href="#OTHERSDAY" data-toggle="tab">Others</button>
+				</div>
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="YOURSDAY">
+						<div class="col-md-12">
+							<div class="recentDataTitle animated zoomIn">
+								Your Grapes
+							</div>
+							<div id="recentData" class="animated zoomIn">
+								<ul>
+									{{#each yourkinderact}}
+									<li class="{{btn-id}}">
+										<button type="button" class="btnRecent hvr-shrink" data-toggle="modal" data-target="#{{datamodal}}">
+													{{act}}
+											</button>
+									</li>
+									{{/each}}
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="OTHERSDAY">
+						<div class="col-md-12">
+							<div class="recentDataTitle animated zoomIn">
+								Other Grapes
+							</div>
+							<div id="recentData" class="animated zoomIn">
+								<ul>
+									{{#each otherkinderact}}
+									<li class="{{btn-id}}">
+										<button type="button" class="btnRecent hvr-shrink" data-toggle="modal" data-target="#{{datamodal}}">
+													{{act}}
+											</button>
+									</li>
+									{{/each}}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+<div class="modal fade" id="addmodal" role="dialog">
+<div class="modal-dialog">
+
+	<!-- Modal content-->
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Add Grape</h4>
+		</div>
+		<div class="modal-body">
+			<form id="other-form" role="form" method="get" action="/data">
+				<div class="form-group">
+					<label for="YouOrOthers">Is this good deed for yourself or others?</label>
+					<div class="radio-btns">
+						<label class="radio-inline"><input id="yourradio" type="radio" name="radiochoice" value="yourself">Yourself</label>
+						<label class="radio-inline"><input id="otherradio" type="radio" name="radiochoice" value="others">Others</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">What did you do?</label>
+					<input type="text" class="form-control" id="whatyoudoO" name="whatyoudoO" placeholder="Ex. Paid for Bobby's lunch.">
+				</div>
+				<div class="form-group">
+					<label for="exampleTextarea">Description</label>
+					<textarea class="form-control" id="howyoufeelO" name="howyoufeelO" rows="3" placeholder="Ex. I paid for Bobby's pizza today while he went to the bathroom. The smile on his face said it all."></textarea>
+				</div>
+				<div class="form-group">
+					<label for="category">What kind of grape was it?</label>
+					<select class="form-control" name="category" id="category">
+						<option>Love</option>
+						<option>Compassion</option>
+						<option>Time</option>
+						<option>Energy</option>
+						<option>Charity</option>
+						<option>Health</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleTextarea">How grape did you feel?</label>
+					<input type="range" name="ratingO" min="0" max="10" value="0" steps="1" onchange="showValueOther(this.value)"/>
+					<span>0</span><span style="float:right;">10</span>
+					<div class="row">
+						<p style="color:black;font-size:12pt;">You feel <span id="rangeo">0</span> grape on a scale of 10.</p>
+					</div>
+				</div>
+				<input type="submit" class="btn btn-lg" value="Submit"/>
+			</form>
+		</div>
+	</div>
+
+</div>
+</div>
+<!-- END MODAL -->
+
+		<!-- THIS IS FOR THE HELP BUTTON -->
+		<div class="row" id="fixedbutton">
+			<span class="glyphicon glyphicon-question-sign animated slideInUp clickable" aria-hidden="true" data-toggle="modal" data-target="#helpModal"></span>
+		</div>
+
+		<div class="modal fade" id="helpModal" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Help</h4>
+					</div>
+					<div class="modal-body">
+						<h5><b>Reflection</b><br></h5>
+						<h5>This is the reflection page. You can see how each kind of <b>grape</b> affects your overall happiness and find ways to improve.</h5>
+
+					</div>
+					<div class="modal-body">
+						<h4>If you have any more questions, feel free to email us at grape@grapeness.com</h4>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/reflection.js"></script>
+		<script src="js/data.js"></script>
+
+
+	</body>
+</html>
