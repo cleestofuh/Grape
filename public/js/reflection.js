@@ -4,6 +4,7 @@ $('select').on(
       this.selectedIndex = -1;
     }
   , "change": function() {
+      ga("send", "event", "like", "click");
       choice = $(this).val();
 
       document.getElementById('selectedCat').innerHTML = choice + ":";
