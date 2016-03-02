@@ -80,14 +80,32 @@ exports.projectInfo = function (req, res) {
 
 exports.deleteKinder = function(req, res) {
   var result = [];
-  kindersjson.yourkinders.map(function (obj) {
-      if (obj.datamodal == req.body.id) {
-        return;
-      }
-      result.push(obj);
-  });
+  var n = req.body.id;
+  n = n.indexOf("ykModal");
+  console.log( "n: " + n);
 
-  kindersjson.yourkinders = result;
-  console.log(kindersjson.yourkidners);
+  if( n != -1){
+    kindersjson.yourkinders.map(function (obj) {
+        if (obj.datamodal == req.body.id) {
+          return;
+        }
+        result.push(obj);
+    });
+    kindersjson.yourkinders = result;
+    console.log(kindersjson.yourkidners);
+
+  }
+  else {
+    kindersjson.otherkinders.map(function (obj) {
+        if (obj.datamodal == req.body.id) {
+          return;
+        }
+        result.push(obj);
+    });
+    kindersjson.otherkinders = result;
+    console.log(kindersjson.otherkidners);
+
+  }
+
 };
 
