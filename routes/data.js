@@ -109,3 +109,28 @@ exports.deleteKinder = function(req, res) {
 
 };
 
+exports.dataInfo = function(req, res) {
+   //var projectID = req.params.datamodal;
+   //ar index = projectID.substr('ykModal'.length);
+   //console.log("projectID: " + projectID);
+   //onsole.log("index: " + index);
+
+   
+   //var n = projectID.indexOf("ykModal");
+   //console.log( "n: " + n);
+
+   //var project;
+
+    /*
+   if (n != -1)
+     project = kindersjson["yourkinders"];
+   else 
+     project = kindersjson["otherkinders"];
+   */
+   var project = kindersjson;
+
+   //console.log("data.js project: " + kindersjson["yourkinders"][index]["act"]);
+   res.json(project);
+
+};
+

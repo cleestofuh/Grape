@@ -49,6 +49,7 @@ app.post('/data', data.projectInfo);
 app.post('/dataDelete', data.deleteKinder);
 
 app.get('/reflection', reflection.view);
+app.get('/data/json', data.dataInfo)
 
 
 // Example route
