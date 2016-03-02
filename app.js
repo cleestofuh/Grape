@@ -13,6 +13,7 @@ var challenge = require('./routes/challenge');
 var data = require('./routes/data');
 var streak = require('./routes/streak');
 var reflection = require('./routes/reflection');
+var reflection2 = require('./routes/reflection2');
 
 // Example route
 // var user = require('./routes/user');
@@ -50,6 +51,7 @@ app.post('/dataDelete', data.deleteKinder);
 
 app.get('/reflection', reflection.view);
 app.get('/data/json', data.dataInfo)
+app.get('/reflection2', reflection2.view2);
 
 
 // Example route

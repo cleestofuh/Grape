@@ -379,3 +379,15 @@ h3{
 #selectedCat {
   font-size: 50pt;
 }
+
+.nav-pills > li > a {
+  color: white;
+  border: 1px solid white;
+  margin: 5px;
+}
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+  background-color: white;
+  color: #bfa6cc;
+}
