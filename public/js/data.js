@@ -10,25 +10,19 @@ $(".edit").click(function(e) {
   index = "." + index;
   //$(index).hide();
 
-  
-  //var getJson = $.get("../kinders.json", editData);
   var description = container.find('.act-desc').text();
   var rating = container.find('.act-rating').text();
   var title = container.find('.act-title').text();
 
-  console.log(description + ' ' + rating);
-
   var body = {
-    'description': description,
-    'rating': rating,
-    'id': projectID,
-    'title': title
+      'description': description,
+      'rating': rating,
+      'id': projectID,
+      'title': title
   };
 
-  $.post("/data", body, editData);
-  //console.log("json: " + json);
 
-  // $(".act-title").innerHTML = title;
+  $.post("/data", body, editData);
   $('.btnRecent[data-target="#'+projectID+'"]').text(title);
 
  });

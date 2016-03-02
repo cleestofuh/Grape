@@ -39,14 +39,33 @@ exports.giveData = function(req, res){
 
 exports.projectInfo = function (req, res) {
 
-  kindersjson.yourkinders = kindersjson.yourkinders.map(function (obj) {
+  var n = req.body.id;
+  n = n.indexOf("ykModal");
+  console.log( "n: " + n);
+
+  if( n != -1)
+  {
+    kindersjson.yourkinders = kindersjson.yourkinders.map(function (obj) {
       if (obj.datamodal == req.body.id) {
         obj.description = req.body.description;
         obj.rating = req.body.rating;
         obj.act = req.body.title;
       }
       return obj;
-  });
+      });
+  }
+  else {
+    kindersjson.otherkinders = kindersjson.otherkinders.map(function (obj) {
+      if (obj.datamodal == req.body.id) {
+        obj.description = req.body.description;
+        obj.rating = req.body.rating;
+        obj.act = req.body.title;
+      }
+      return obj;
+    });
+  }
+
+  
 
   console.log(kindersjson.yourkinders);
   // var projectID = req.params.datamodal;
