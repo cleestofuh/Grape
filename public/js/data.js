@@ -13,12 +13,14 @@ $(".edit").click(function(e) {
   var description = container.find('.act-desc').text();
   var rating = container.find('.act-rating').text();
   var title = container.find('.act-title').text();
+  var category = container.find('.act-category').text();
 
   var body = {
       'description': description,
       'rating': rating,
       'id': projectID,
-      'title': title
+      'title': title,
+      'category': category
   };
 
 

@@ -50,6 +50,7 @@ exports.projectInfo = function (req, res) {
         obj.description = req.body.description;
         obj.rating = req.body.rating;
         obj.act = req.body.title;
+        obj.category = req.body.category;
       }
       return obj;
       });
@@ -60,6 +61,7 @@ exports.projectInfo = function (req, res) {
         obj.description = req.body.description;
         obj.rating = req.body.rating;
         obj.act = req.body.title;
+        obj.category = req.body.category;
       }
       return obj;
     });
@@ -92,7 +94,6 @@ exports.deleteKinder = function(req, res) {
         result.push(obj);
     });
     kindersjson.yourkinders = result;
-    console.log(kindersjson.yourkidners);
 
   }
   else {
@@ -103,7 +104,6 @@ exports.deleteKinder = function(req, res) {
         result.push(obj);
     });
     kindersjson.otherkinders = result;
-    console.log(kindersjson.otherkidners);
 
   }
 
