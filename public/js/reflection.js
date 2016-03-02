@@ -4,7 +4,7 @@ $('select').on(
       this.selectedIndex = -1;
     }
   , "change": function() {
-      ga("send", "event", "select", "click");
+
       choice = $(this).val();
 
       document.getElementById('selectedCat').innerHTML = choice + ":";
@@ -28,9 +28,9 @@ $('select').on(
         document.getElementById('selectedCatDesc').innerHTML = "These acts of kindness made you feel the least happy. What can you do to change this?";
       }
 
-      $.get("/data/json", displayData);  
-      
+      $.get("/data/json", displayData);
 
+      ga("send", "event", "select", "click");
     }
   });
 
@@ -75,7 +75,7 @@ function displayData(result) {
       console.log(i);
       //console.log("result: " +result['yourkinders'][i][+'');
       projectID = result['yourkinders'][i]['datamodal'];
-      if(result['yourkinders'][i]['category'] != choice) { 
+      if(result['yourkinders'][i]['category'] != choice) {
         var text = $('.btnRecent[data-target="#'+projectID+'"]').text();
         console.log("hide: " + text);
         $('.btnRecent[data-target="#'+projectID+'"]').hide();
@@ -89,7 +89,7 @@ function displayData(result) {
       console.log(i);
       //console.log("result: " +result['yourkinders'][i][+'');
       projectID = result['otherkinders'][i]['datamodal'];
-      if(result['otherkinders'][i]['category'] != choice) { 
+      if(result['otherkinders'][i]['category'] != choice) {
         var text = $('.btnRecent[data-target="#'+projectID+'"]').text();
         console.log("hide: " + text);
         $('.btnRecent[data-target="#'+projectID+'"]').hide();
@@ -99,6 +99,6 @@ function displayData(result) {
       }
 
   }
-      
-      
+
+
 }
