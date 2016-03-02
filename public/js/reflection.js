@@ -28,6 +28,9 @@ $('select').on(
         document.getElementById('selectedCatDesc').innerHTML = "These acts of kindness made you feel the least happy. What can you do to change this?";
       }
 
+      $.get("/data/json", displayData);  
+      
+
     }
   });
 
@@ -56,4 +59,46 @@ function drawChart() {
 
   var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
   chart.draw(data, options);
+}
+
+
+function displayData(result) {
+
+  //console.log(result['yourkinders'][0]['category']);
+  //console.log(result['yourkinders'].length);
+  //var description = container.find('.act-desc').text();
+  var choice = $('#selectedCat').text();
+  var projectID;
+  choice = choice.substr(0,choice.length-1);
+  console.log("choice: "+ choice);
+  for(var i=0; i < result['yourkinders'].length; i++){
+      console.log(i);
+      //console.log("result: " +result['yourkinders'][i][+'');
+      projectID = result['yourkinders'][i]['datamodal'];
+      if(result['yourkinders'][i]['category'] != choice) { 
+        var text = $('.btnRecent[data-target="#'+projectID+'"]').text();
+        console.log("hide: " + text);
+        $('.btnRecent[data-target="#'+projectID+'"]').hide();
+      }
+      else {
+        $('.btnRecent[data-target="#'+projectID+'"]').show();
+      }
+
+  }
+  for(var i=0; i < result['otherkinders'].length; i++){
+      console.log(i);
+      //console.log("result: " +result['yourkinders'][i][+'');
+      projectID = result['otherkinders'][i]['datamodal'];
+      if(result['otherkinders'][i]['category'] != choice) { 
+        var text = $('.btnRecent[data-target="#'+projectID+'"]').text();
+        console.log("hide: " + text);
+        $('.btnRecent[data-target="#'+projectID+'"]').hide();
+      }
+      else {
+        $('.btnRecent[data-target="#'+projectID+'"]').show();
+      }
+
+  }
+      
+      
 }
