@@ -284,7 +284,7 @@
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
 								<div id="act">
-									<h4 class="modal-title">{{act}}</h4>
+									<h4 class="modal-title act-title" contenteditable="true">{{act}}</h4>
 									<h3 class="small">Click on text to edit description or rating.</h3>
 								</div>
 							</div>
@@ -295,17 +295,19 @@
 		          	  </div>
 								<h5><b>Description</b><br></h5>
 									<div contenteditable="true">
-										<h5>{{description}}</h5>
+										<h5 class="act-desc">{{description}}</h5>
 									</div>
 									<h5><b>  Your Grape Rating: </b>
-									<div contenteditable="true"><h5>{{rating}}<br></h5></div>
+									<div contenteditable="true"><h5 class="act-rating">{{rating}}<br></h5></div>
 							</div>
 							<div class="modal-footer">
-        				<div class="remove" id="delete-btn">
-        					<button type="button" class="btn" data-dismiss="modal">Delete</button>
-        				</div>
-								<button type="button" class="btn" data-dismiss="modal">Save Changes</button>
-        			</div>
+        					     <div class="edit" id="delete-btn">
+	            					<button type="button" class="btn" data-dismiss="modal">Save Changes</button>
+	            				</div>
+	            				<div class="remove">
+								<button type="button" class="btn" data-dismiss="modal">Delete</button>
+								</div>>
+        					</div>
 					</div>
 				</div>
 			</div>
