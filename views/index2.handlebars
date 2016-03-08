@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+		<title>GRAPE</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- FONTS -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/animate.css" type="text/css">
+		<link href="css/hover.css" rel="stylesheet" media="all">
+
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-default center">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse center" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="index2">HOME</a></li>
+		        <li><a href="data">GRAPES</a></li>
+						<li><a href="reflection">REFLECTION</a></li>
+						<li><a href="streak">STREAK</a></li>
+						<li><a href="challenge">CHALLENGE</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+
+    <div class="container">
+      <div class="row">
+				<div class="text-center">
+  		   <img class="logoimg" src="img/grapelogo.png" alt="logo"/>
+			 </div>
+      </div>
+      <div class="row">
+        <h3 class="homep animated fadeIn">We define grapes as:<br>offers of love, compassion, time, energy, or charity. An act that brings sunshine into the lives of yourself or others.</h3>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+					<div class="text-center">
+          	<button id="loveYourself" class="btn btn-lg animated slideInLeft" type="button" data-toggle="modal" data-target="#otherModal">Create a New Grape</button>
+					</div>
+				</div>
+			<div class="row">
+        <div class="col-sm-6">
+						<div class="text-center">
+							<a id="viewGrapes" href="data" class="btn btn-lg animated slideInRight" type="button">View Grapes</a>
+						</div>
+					</div>
+      </div>
+			<div class="row">
+				<div class="col-sm-6">
+						<div class="text-center">
+							<a id="viewReflection" href="reflection" class="btn btn-lg animated slideInRight" type="button">Reflection</a>
+						</div>
+					</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="text-center">
+						<a href="challenge" class="btn btn-lg animated slideInUp" type="button">Challenges</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" id="fixedbutton">
+  			<span class="glyphicon glyphicon-question-sign animated slideInUp clickable" aria-hidden="true" data-toggle="modal" data-target="#helpModal"></span>
+			</div>
+
+						<!-- Modal -->
+			<div class="modal fade" id="otherModal" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Add Grape</h4>
+						</div>
+						<div class="modal-body">
+							<form id="other-form" role="form" method="get" action="/data">
+								<div class="form-group">
+									<label for="YouOrOthers">Is this good deed for yourself or others?</label>
+									<div class="radio-btns">
+										<label class="radio-inline"><input id="yourradio" type="radio" name="radiochoice" value="yourself">Yourself</label>
+										<label class="radio-inline"><input id="otherradio" type="radio" name="radiochoice" value="others">Others</label>
+									</div>
+								</div>
+							  <div class="form-group">
+							    <label for="exampleInputEmail1">What did you do?</label>
+							    <input type="text" class="form-control" id="whatyoudoO" name="whatyoudoO" placeholder="Ex. Paid for Bobby's lunch.">
+							  </div>
+							  <div class="form-group">
+							    <label for="exampleTextarea">Description</label>
+							    <textarea class="form-control" id="howyoufeelO" name="howyoufeelO" rows="3" placeholder="Ex. I paid for Bobby's pizza today while he went to the bathroom. The smile on his face said it all."></textarea>
+							  </div>
+								<div class="form-group">
+									<label for="category">What kind of grape was it?</label>
+									<select class="form-control" name="category" id="category">
+										<option>Love</option>
+										<option>Compassion</option>
+										<option>Time</option>
+										<option>Energy</option>
+										<option>Charity</option>
+										<option>Health</option>
+									</select>
+								</div>
+							  <div class="form-group">
+							  	<label for="exampleTextarea">How grape did you feel?</label>
+							  	<input type="range" name="ratingO" min="0" max="10" value="0" steps="1" onchange="showValueOther(this.value)"/>
+							  	<span>0</span><span style="float:right;">10</span>
+									<div class="row">
+										<p style="color:black;font-size:12pt;">You feel <span id="rangeo">0</span> grape on a scale of 10.</p>
+									</div>
+								</div>
+								<input type="submit" class="btn btn-lg" value="Submit"/>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- END MODAL -->
+
+			<div class="modal fade" id="helpModal" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Help</h4>
+						</div>
+						<div class="modal-body">
+							<h5>Hello. Welcome to Grape!</h5>
+							<h5><b>About Us</b><br></h5>
+							<h5>The purpose of Grape is to allow people to keep track of them doing good deeds so they can make time and strive to create a positive environment around us and to make ourselves happy. Since people are often busy with their own lives, they become so absorbed in their own activities and work that they forget to acknowledge others or even themselves. We aim to target individuals who want to do the right thing even when life gets in the way, and allow for individuals to have more incentive to perform good deeds for themselves and the people around them.</h5>
+							<h5><b>Frequently Asked Questions</b></h5>
+							<h5><b>What is the difference between <i>love yourself</i> and <i>love others</i>?<b></h5>
+							<h5>Our goal is to encourage users to be nice to not only to others but also to yourself. If you did something nice to yourself, record it using the <i>love yourself</i> page. If you did something nice to others, record it using the <i>love others</i> page.<br/></h5>
+							<h5><b>What is a <i>Grape</i>?</b></h5>
+							<h5>A Grape is the act of being friendly, generous, and considerate.</h5>
+
+						</div>
+						<div class="modal-footer">
+							<h4>If you have any more questions, feel free to email us at grape@grapeness.com</h4>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+    </div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/index.js"></script>
+		{{> googleAnalytics}}
+
+	</body>
+</html>

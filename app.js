@@ -9,6 +9,7 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
+var index2 = require('./routes/index2');
 var challenge = require('./routes/challenge');
 var data = require('./routes/data');
 var streak = require('./routes/streak');
@@ -42,6 +43,7 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
+app.get('/index2', index2.view);
 app.get('/challenge', challenge.giveChallenge);
 app.get('/data', data.giveData);
 app.get('/streak', streak.giveStreak);
