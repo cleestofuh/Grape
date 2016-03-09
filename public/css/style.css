@@ -391,3 +391,16 @@ h3{
   background-color: white;
   color: #bfa6cc;
 }
+
+#addGrapeButton {
+  -webkit-animation-delay: 0.1s;
+}
+#viewGrapes {
+  -webkit-animation-delay: 0.3s;
+}
+#viewReflection {
+  -webkit-animation-delay: 0.5s;
+}
+#viewChallenges {
+  -webkit-animation-delay: 0.7s;
+}
