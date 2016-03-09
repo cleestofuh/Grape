@@ -15,6 +15,7 @@ var data = require('./routes/data');
 var streak = require('./routes/streak');
 var reflection = require('./routes/reflection');
 var reflection2 = require('./routes/reflection2');
+var grapevine = require('./routes/grapevine');
 
 // Example route
 // var user = require('./routes/user');
@@ -55,6 +56,7 @@ app.get('/reflection', reflection.view);
 app.get('/data/json', data.dataInfo)
 app.get('/reflection2', reflection2.view2);
 
+app.get('/grapevine', grapevine.view);
 
 // Example route
 // app.get('/users', user.list);
